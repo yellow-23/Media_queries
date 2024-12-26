@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Autos Electricos</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-content">
+                <h1>Electric Cars</h1>
+                <div class="menu-mobile">
+                    <span>☰</span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="filters">
+            <div class="filters-content">
+                <a href="#">Inicio</a>
+                <a href="#">Catálogo</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+
+        <main>
+            <div class="filter-section">
+                <select class="filter-select">
+                    <option value="">Ordenar por precio</option>
+                    <option value="low">Menor a mayor</option>
+                    <option value="high">Mayor a menor</option>
+                </select>
+                
+                <select class="filter-select">
+                    <option value="">Marca</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="bmw">BMW</option>
+                    <option value="nissan">Nissan</option>
+                </select>
+
+                <div class="price-range">
+                    <label>Rango de precio:</label>
+                    <input type="range" min="30000" max="60000" value="45000">
+                    <span class="price-value">$45,000</span>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="./assets/img/4a9f6eb2-c9f2-492d-a49d-84e69143784a_20240214-Model3_57.avif" alt="tesla-model-3">
+                    <h3>Tesla Model 3</h3>
+                    <p>Sedán eléctrico de alto rendimiento</p>
+                    <p>$45,000</p>
+                </div>
+                <div class="product-card">
+                    <img src="./assets/img/bmw-i4-edrive-40-onepager-ms-m-typical-dynamics.jpg" alt="bmw-i4">
+                    <h3>BMW i4</h3>
+                    <p>Elegancia y tecnología eléctrica</p>
+                    <p>$55,000</p>
+                </div>
+                <div class="product-card">
+                    <img src="./assets/img/4a9f6eb2-c9f2-492d-a49d-84e69143784a_20240214-Model3_57.avif" alt="nissan-leaf">
+                    <h3>Nissan Leaf</h3>
+                    <p>Eficiencia y confiabilidad</p>
+                    <p>$32,000</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Electric Car Store. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

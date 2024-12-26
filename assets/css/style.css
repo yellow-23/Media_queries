@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* layout con grid */
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+        "nav"
+        "filters"
+        "main"
+        "footer";
+    grid-template-rows: auto auto 1fr auto;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #1e90ff; /* Dodger Blue - darker shade */
+    padding: 1rem;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.nav-content h1 {
+    font-size: 1.5rem;
+}
+
+.menu-mobile {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu-desktop {
+    display: none;
+}
+
+.menu-desktop a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.menu-desktop a:hover {
+    background-color: #4FB4E4;
+    border-radius: 4px;
+}
+
+
+.filters {
+    grid-area: filters;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    max-width: 200px;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.filters-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 10px 0;
+}
+
+.filters-content a{
+    display: flex;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #1e90ff; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.filters-content button:hover {
+    background-color: #4FB4E4;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group h4 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.filter-section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.price-range {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.price-range input {
+    width: 200px;
+}
+
+/* Estilos del contenido principal */
+main {
+    grid-area: main;
+    padding: 1rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.product-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-card p:last-child {
+    color: #1e90ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: #1e90ff;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+@media (min-width: 576px) {
+    .container {
+        grid-template-areas:
+            "nav nav"
+            "filters main"
+            "footer footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu-desktop {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+   
+}
+
+@media (min-width: 577px) {
+    .container {
+        grid-template-areas:
+            "nav nav"
+            "filters main"
+            "filters footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .filters {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu-desktop {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 576px) {
+    .filters {
+        max-width: 100%;
+        padding: 0.5rem;
+        height: auto;
+    }
+    
+    .filters-content {
+        padding: 5px;
+        gap: 0.25rem;
+    }
+}
